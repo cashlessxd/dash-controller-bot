@@ -10,10 +10,13 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
+    console.log('received message: ', message.content);
     if (message.author.bot) return;
 
     if (message.content === '!ping') {
+        console.log('sending response...');
         message.channel.send('Pong!');
+        console.log('sent!')
     }
 });
 
